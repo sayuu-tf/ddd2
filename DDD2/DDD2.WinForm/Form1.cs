@@ -16,5 +16,6 @@ namespace DDD2.WinForm
         {
             InitializeComponent();
         }
+
     }
 }
