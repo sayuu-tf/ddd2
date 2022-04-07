@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="View\ShopItemListView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\ShopItemListView.Designer.cs">
+      <DependentUpon>ShopItemListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\ShopItemListView.resx">
+      <DependentUpon>ShopItemListView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +78,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD2.Domain\DDD2.Domain.csproj">
+      <Project>{4ea102ea-83ba-4f89-8fdd-9ea928245cbd}</Project>
+      <Name>DDD2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD2.Infrastructure\DDD2.Infrastructure.csproj">
+      <Project>{f7f40847-8aeb-4fec-bcd8-dd68c68f4338}</Project>
+      <Name>DDD2.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

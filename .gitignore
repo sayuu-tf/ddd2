@@ -1,3 +1,11 @@
+DDD2/packages
+DDD2/.vs/
 DDD2/DDD2.WinForm/.vs/
 DDD2/DDD2.WinForm/bin/
 DDD2/DDD2.WinForm/obj/
+DDD2/DDD2Test.Tests/bin/
+DDD2/DDD2Test.Tests/obj/
+DDD2/DDD2.Domain/bin/
+DDD2/DDD2.Domain/obj/
+DDD2/DDD2.Infrastructure/bin/
+DDD2/DDD2.Infrastructure/obj/

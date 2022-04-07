@@ -1,7 +1,7 @@
 ﻿
 namespace DDD2.WinForm
 {
-    partial class Form1
+    partial class ShopItemListView
     {
         /// <summary>
         /// 必要なデザイナー変数です。

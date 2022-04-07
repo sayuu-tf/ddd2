@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DDD2.WinForm
 {
-    public partial class Form1 : Form
+    public partial class ShopItemListView : Form
     {
-        public Form1()
+        public ShopItemListView()
         {
             InitializeComponent();
         }
