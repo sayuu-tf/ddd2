@@ -5,8 +5,4 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DDD2.Domain\DDD2.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

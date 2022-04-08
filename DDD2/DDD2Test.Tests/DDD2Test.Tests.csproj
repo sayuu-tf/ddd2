@@ -56,12 +56,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DDD2.Domain\DDD2.Domain.csproj">
-      <Project>{4ea102ea-83ba-4f89-8fdd-9ea928245cbd}</Project>
+    <ProjectReference Include="..\ClassLibrary1\DDD2.Domain.csproj">
+      <Project>{ce8c21a9-92e2-4b42-9d56-0f3005f04548}</Project>
       <Name>DDD2.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DDD2.Infrastructure\DDD2.Infrastructure.csproj">
-      <Project>{f7f40847-8aeb-4fec-bcd8-dd68c68f4338}</Project>
+    <ProjectReference Include="..\ClassLibrary2\DDD2.Infrastructure.csproj">
+      <Project>{72e34b93-31c5-4b2d-9a6d-d0e0905b62f5}</Project>
       <Name>DDD2.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\DDD2.WinForm\DDD2.WinForm.csproj">
