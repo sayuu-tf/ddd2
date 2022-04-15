@@ -9,6 +9,8 @@ namespace DDD2.Domain.Repositories
 {
     public interface IItemRepository
     {
-        IReadOnlyList<ItemEntity> GetData();
+        IReadOnlyList<ItemEntity> GetItem(int shopId);
+
+        ItemEntity GetHighestPriceItem(int shopId);
     }
 }

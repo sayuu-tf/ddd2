@@ -17,5 +17,9 @@ namespace DDD2.WinForm
             InitializeComponent();
         }
 
+        private void ShopSelectButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

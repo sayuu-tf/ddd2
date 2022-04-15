@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD2.WinForm", "DDD2.WinFor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD2Test.Tests", "DDD2Test.Tests\DDD2Test.Tests.csproj", "{C970FDD7-7264-4145-9D3B-FF128F30C5AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD2.Domain", "DDD2.Domain\DDD2.Domain.csproj", "{A57DAD25-2109-41C1-9E16-C7BE4B54D73B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD2.Infrastructure", "DDD2.Infrastructure\DDD2.Infrastructure.csproj", "{0F2B9434-4571-4200-A82E-9165EA65A7BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C970FDD7-7264-4145-9D3B-FF128F30C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C970FDD7-7264-4145-9D3B-FF128F30C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C970FDD7-7264-4145-9D3B-FF128F30C5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57DAD25-2109-41C1-9E16-C7BE4B54D73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57DAD25-2109-41C1-9E16-C7BE4B54D73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57DAD25-2109-41C1-9E16-C7BE4B54D73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57DAD25-2109-41C1-9E16-C7BE4B54D73B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F2B9434-4571-4200-A82E-9165EA65A7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F2B9434-4571-4200-A82E-9165EA65A7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F2B9434-4571-4200-A82E-9165EA65A7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F2B9434-4571-4200-A82E-9165EA65A7BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

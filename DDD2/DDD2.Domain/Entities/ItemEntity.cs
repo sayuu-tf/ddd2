@@ -8,9 +8,9 @@ namespace DDD2.Domain.Entities
 {
     public sealed class ItemEntity
     {
-        string ItemName { get; }
-        int Price { get; }
-        int ShopId { get; }
+        public string ItemName { get; }
+        public int Price { get; }
+        public int ShopId { get; }
 
         public ItemEntity(string itemName, int price, int shopId)
         {

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModel\ShopItemViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\ShopItemListView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DDD2.Domain\DDD2.Domain.csproj">
+      <Project>{a57dad25-2109-41c1-9e16-c7be4b54d73b}</Project>
+      <Name>DDD2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD2.Infrastructure\DDD2.Infrastructure.csproj">
+      <Project>{0f2b9434-4571-4200-a82e-9165ea65a7bf}</Project>
+      <Name>DDD2.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
