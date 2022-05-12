@@ -39,9 +39,6 @@ namespace DDD2Test.Tests
 
             //結果表示
             viewModel.SelectedShopId.Is("1");
-            //viewModel.ShopNameText.Is("");
-            viewModel.ItemNameText.Is("ペンケース");
-            viewModel.ItemPriceText.Is("1200");
         }
     }
 }
