@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DDD2.WinForm
+namespace DDD2.WinForm.View
 {
-    public partial class ShopItemListView : Form
+    public partial class ShopListView : Form
     {
-        public ShopItemListView()
+        public ShopListView()
         {
             InitializeComponent();
         }
-
     }
 }
