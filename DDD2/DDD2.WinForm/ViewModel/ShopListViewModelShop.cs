@@ -14,5 +14,9 @@ namespace DDD2.WinForm.ViewModel
         {
             _entity = entity;
         }
+
+        public string ShopId => _entity.ShopId.ToString();
+        public string ShopName => _entity.ShopName;
+        public string Location => _entity.Location;
     }
 }
