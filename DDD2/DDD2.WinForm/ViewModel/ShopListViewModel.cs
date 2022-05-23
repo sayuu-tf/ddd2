@@ -14,6 +14,11 @@ namespace DDD2.WinForm.ViewModel
         public ShopListViewModel(IShopRepository shop)
         {
             _shop = shop;
+
+            foreach (var entity in _shop.GetData())
+            {
+                Shops.Add(new ShopListViewModelShop(entity));
+            }
         }
         public BindingList<ShopListViewModelShop> Shops { get; set; }
         = new BindingList<ShopListViewModelShop>();
