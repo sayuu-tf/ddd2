@@ -36,12 +36,13 @@ namespace DDD2.WinForm
             this.label3 = new System.Windows.Forms.Label();
             this.ShopNameText = new System.Windows.Forms.Label();
             this.LocationText = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(37, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 12);
             this.label1.TabIndex = 0;
@@ -49,14 +50,14 @@ namespace DDD2.WinForm
             // 
             // ShopSelectTextBox
             // 
-            this.ShopSelectTextBox.Location = new System.Drawing.Point(72, 26);
+            this.ShopSelectTextBox.Location = new System.Drawing.Point(97, 57);
             this.ShopSelectTextBox.Name = "ShopSelectTextBox";
             this.ShopSelectTextBox.Size = new System.Drawing.Size(100, 19);
             this.ShopSelectTextBox.TabIndex = 1;
             // 
             // ShopSelectButton
             // 
-            this.ShopSelectButton.Location = new System.Drawing.Point(187, 27);
+            this.ShopSelectButton.Location = new System.Drawing.Point(212, 58);
             this.ShopSelectButton.Name = "ShopSelectButton";
             this.ShopSelectButton.Size = new System.Drawing.Size(75, 23);
             this.ShopSelectButton.TabIndex = 2;
@@ -66,7 +67,7 @@ namespace DDD2.WinForm
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 73);
+            this.label2.Location = new System.Drawing.Point(37, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 3;
@@ -75,7 +76,7 @@ namespace DDD2.WinForm
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 110);
+            this.label3.Location = new System.Drawing.Point(37, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 12);
             this.label3.TabIndex = 4;
@@ -84,7 +85,7 @@ namespace DDD2.WinForm
             // ShopNameText
             // 
             this.ShopNameText.AutoSize = true;
-            this.ShopNameText.Location = new System.Drawing.Point(97, 73);
+            this.ShopNameText.Location = new System.Drawing.Point(122, 104);
             this.ShopNameText.Name = "ShopNameText";
             this.ShopNameText.Size = new System.Drawing.Size(82, 12);
             this.ShopNameText.TabIndex = 5;
@@ -93,17 +94,28 @@ namespace DDD2.WinForm
             // LocationText
             // 
             this.LocationText.AutoSize = true;
-            this.LocationText.Location = new System.Drawing.Point(97, 110);
+            this.LocationText.Location = new System.Drawing.Point(122, 141);
             this.LocationText.Name = "LocationText";
             this.LocationText.Size = new System.Drawing.Size(71, 12);
             this.LocationText.TabIndex = 6;
             this.LocationText.Text = "LocationText";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "ショップList";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ShopItemListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 341);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.LocationText);
             this.Controls.Add(this.ShopNameText);
             this.Controls.Add(this.label3);
@@ -127,6 +139,7 @@ namespace DDD2.WinForm
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ShopNameText;
         private System.Windows.Forms.Label LocationText;
+        private System.Windows.Forms.Button button1;
     }
 }
 

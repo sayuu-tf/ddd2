@@ -1,4 +1,5 @@
 ﻿using DDD2.Domain.Repositories;
+using DDD2.Infrastructure.SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,13 @@ namespace DDD2.WinForm.ViewModel
     public class ShopListViewModel : ViewModelBase
     {
         private IShopRepository _shop;
+
+        public ShopListViewModel()
+            :this(new ShopSQLite())
+        {
+
+        }
+
         public ShopListViewModel(IShopRepository shop)
         {
             _shop = shop;

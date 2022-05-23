@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDD2.WinForm.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,12 @@ namespace DDD2.WinForm
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var f = new ShopListView())
+            {
+                f.ShowDialog();
+            }
+        }
     }
 }
