@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DDD2.Domain.Repositories
 {
-    public interface ShopRepository
+    public interface IShopRepository
     {
         IReadOnlyList<ShopEntity> GetData();
     }

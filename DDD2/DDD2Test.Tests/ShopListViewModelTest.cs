@@ -22,10 +22,10 @@ namespace DDD2Test.Tests
                 new ShopEntity("六花亭", "帯広", 2)
             );
 
-            var shopMock = new Mock<ShopRepository>();
+            var shopMock = new Mock<IShopRepository>();
             shopMock.Setup(x => x.GetData()).Returns(entities);
 
-            var viewModel = new ShopListViewModel();
+            var viewModel = new ShopListViewModel(shopMock.Object);
             viewModel.Shops.Count.Is(2);
             
         }
