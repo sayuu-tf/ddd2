@@ -9,9 +9,9 @@ namespace DDD2.WinForm.ViewModel
 {
     public class ShopItemViewModel: ViewModelBase
     {
-        private IItemRepository _items;
+        private ItemRepository _items;
 
-        public ShopItemViewModel(IItemRepository items)
+        public ShopItemViewModel(ItemRepository items)
         {
             _items = items;
         }

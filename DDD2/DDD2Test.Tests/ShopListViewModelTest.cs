@@ -1,5 +1,6 @@
 ﻿using DDD2.Domain.Entities;
 using DDD2.Domain.Repositories;
+using DDD2.WinForm.ViewModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -24,8 +25,8 @@ namespace DDD2Test.Tests
             var shopMock = new Mock<ShopRepository>();
             shopMock.Setup(x => x.GetData()).Returns(entities);
 
-            var viewModel = new ShopListViewModel(shopMock.Object);
-
+            var viewModel = new ShopListViewModel();
+            viewModel.Shops.Count.Is(2);
             
         }
     }

@@ -66,6 +66,7 @@
     <Compile Include="ChainingAssertion.MSTest.cs" />
     <Compile Include="ShopItemViewModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopListViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

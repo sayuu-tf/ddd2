@@ -62,7 +62,6 @@ namespace DDD2.WinForm
             this.ShopSelectButton.TabIndex = 2;
             this.ShopSelectButton.Text = "ショップ選択";
             this.ShopSelectButton.UseVisualStyleBackColor = true;
-            this.ShopSelectButton.Click += new System.EventHandler(this.ShopSelectButton_Click);
             // 
             // label2
             // 

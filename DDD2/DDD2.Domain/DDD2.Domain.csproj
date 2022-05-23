@@ -44,7 +44,8 @@
     <Compile Include="Entities\ShopEntity.cs" />
     <Compile Include="Entities\ItemEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IItemRepository.cs" />
+    <Compile Include="Repositories\ShopRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,7 @@ namespace DDD2Test.Tests
             items2.Add(new ItemEntity("ワイン", 980, 2));
             items2.Add(new ItemEntity("サンドイッチ", 380, 2));
 
-            var itemMock = new Mock<IItemRepository>();
+            var itemMock = new Mock<ItemRepository>();
             itemMock.Setup(x => x.GetItem(1)).Returns(items1);
             itemMock.Setup(x => x.GetItem(2)).Returns(items2);
 
