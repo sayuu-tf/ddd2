@@ -27,7 +27,7 @@ namespace DDD2Test.Tests
 
             var viewModel = new ShopListViewModel(shopMock.Object);
             viewModel.Shops.Count.Is(2);
-            viewModel.Shops[0].ShopId.Is("1");
+            viewModel.Shops[0].ShopId.Is("0001");//ワザと
             viewModel.Shops[0].ShopName.Is("ルタオ");
             viewModel.Shops[0].Location.Is("小樽");
       

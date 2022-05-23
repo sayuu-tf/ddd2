@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DDD2.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,13 @@ namespace DDD2.Domain.Entities
     {
         public string ShopName { get; }
         public string Location { get; }
-        public int ShopId { get; }
+        public ShopId ShopId { get; }
 
         public ShopEntity(string shopName, string location, int shopId)
         {
             ShopName = shopName;
             Location = location;
-            ShopId = shopId;
+            ShopId = new ShopId(shopId);
         }
     }
 }
