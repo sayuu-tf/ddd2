@@ -12,7 +12,21 @@ namespace DDD2.Infrastructure.SQLite
     {
         public IReadOnlyList<ShopEntity> GetData()
         {
-            throw new NotImplementedException();
+            string sql = @"
+select ShopId,
+ShopId,
+Location
+from Shop
+";
+            return SQLiteHelper.Query(sql,
+                reader =>
+                {
+                    return new ShopEntity(                        
+                        Convert.ToString(reader["ShopName"]),
+                        Convert.ToString(reader["Location"]),
+                        Convert.ToInt32(reader["ShopId"])
+                        );
+                });
         }
     }
 }
