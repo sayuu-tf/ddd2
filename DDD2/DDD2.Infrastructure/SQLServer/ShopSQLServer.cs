@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDD2.Infrastructure.SQLite
+namespace DDD2.Infrastructure.SQLServer
 {
-    public class ShopSQLite : IShopRepository
+    public class ShopSQLServer : IShopRepository
     {
         public IReadOnlyList<ShopEntity> GetData()
         {
@@ -18,15 +18,21 @@ ShopId,
 Location
 from Shop
 ";
-            return SQLiteHelper.Query(sql,
+            ShopEntity shop = null;
+            var result = new List<ShopEntity>();
+            SqlServerHelper.Query(sql,null,
                 reader =>
                 {
-                    return new ShopEntity(                        
+                    shop = new ShopEntity(
                         Convert.ToString(reader["ShopName"]),
                         Convert.ToString(reader["Location"]),
                         Convert.ToInt32(reader["ShopId"])
                         );
+
+                    result.Add(shop);
                 });
+            
+            return result;
         }
     }
 }
