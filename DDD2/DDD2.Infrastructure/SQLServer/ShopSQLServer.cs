@@ -15,8 +15,10 @@ namespace DDD2.Infrastructure.SQLServer
             string sql = @"
 select ShopName,
 ShopId,
-Location
+LocationName
 from Shop
+left join Location
+on Shop.LocationId = Location.LocationId;
 ";
             ShopEntity shop = null;
             var result = new List<ShopEntity>();
@@ -25,7 +27,7 @@ from Shop
                 {
                     shop = new ShopEntity(
                         Convert.ToString(reader["ShopName"]),
-                        Convert.ToString(reader["Location"]),
+                        Convert.ToString(reader["LocationName"]),
                         Convert.ToInt32(reader["ShopId"])
                         );
 

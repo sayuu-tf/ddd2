@@ -17,6 +17,9 @@ namespace DDD2.WinForm.ViewModel
 
         public string ShopId => _entity.ShopId.DisplayValue;
         public string ShopName => _entity.ShopName;
-        public string Location => _entity.Location;
+        public string LocationName => _entity.LocationName;
+
+        //ここのメンバの名前が、表示される列名になる。
+        //LocationNameなら、画面上にもLocationNameと表示される。
     }
 }

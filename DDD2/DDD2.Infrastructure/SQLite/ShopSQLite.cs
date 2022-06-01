@@ -15,15 +15,17 @@ namespace DDD2.Infrastructure.SQLite
             string sql = @"
 select ShopName,
 ShopId,
-Location
+LocationName
 from Shop
+left join Location
+on Shop.LocationId = Location.LocationId;
 ";
             return SQLiteHelper.Query(sql,
                 reader =>
                 {
                     return new ShopEntity(                        
                         Convert.ToString(reader["ShopName"]),
-                        Convert.ToString(reader["Location"]),
+                        Convert.ToString(reader["LocationName"]),
                         Convert.ToInt32(reader["ShopId"])
                         );
                 });
