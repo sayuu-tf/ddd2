@@ -10,5 +10,6 @@ namespace DDD2.Domain.Repositories
     public interface IShopRepository
     {
         IReadOnlyList<ShopEntity> GetData();
+        ShopEntity Select(int shopId);
     }
 }

@@ -33,5 +33,10 @@ on Shop.LocationId = Location.LocationId;
                        );
                 });
         }
+
+        public ShopEntity Select(int shopId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

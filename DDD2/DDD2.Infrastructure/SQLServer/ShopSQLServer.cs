@@ -39,5 +39,10 @@ on Shop.LocationId = Location.LocationId;
             
             return result;
         }
+
+        public ShopEntity Select(int shopId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

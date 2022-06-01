@@ -49,7 +49,18 @@ namespace DDD2.WinForm
 
         public void Search()
         {
-            throw new NotImplementedException();
+            var entity = _shop.Select((Convert.ToInt32(_selectedShopId)));
+
+            if (entity == null)
+            {
+                ShopNameText = String.Empty;
+                LocationNameText = String.Empty;
+            }
+            else
+            {
+                ShopNameText = entity.ShopName;
+                LocationNameText = entity.LocationName;
+            }
         }
     }
 }
