@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\ShopSelectViewModel.cs" />
     <Compile Include="ViewModel\ShopItemViewModel.cs" />
     <Compile Include="ViewModel\ShopListViewModel.cs" />
     <Compile Include="ViewModel\ShopListViewModelShop.cs" />

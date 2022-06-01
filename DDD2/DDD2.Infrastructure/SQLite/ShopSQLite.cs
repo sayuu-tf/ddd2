@@ -16,7 +16,7 @@ namespace DDD2.Infrastructure.SQLite
 select 
 ShopId,
 ShopName,
-LocationId,
+Shop.LocationId,
 LocationName
 from Shop
 left join Location

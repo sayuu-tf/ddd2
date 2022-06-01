@@ -67,6 +67,7 @@
     <Compile Include="ShopItemViewModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShopListViewModelTest.cs" />
+    <Compile Include="ShopSelectViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
