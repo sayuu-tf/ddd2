@@ -13,8 +13,10 @@ namespace DDD2.Infrastructure.SQLServer
         public IReadOnlyList<ShopEntity> GetData()
         {
             string sql = @"
-select ShopName,
+select 
 ShopId,
+ShopName,
+LocationId,
 LocationName
 from Shop
 left join Location
@@ -26,9 +28,10 @@ on Shop.LocationId = Location.LocationId;
                 reader =>
                 {
                     shop = new ShopEntity(
-                        Convert.ToString(reader["ShopName"]),
-                        Convert.ToString(reader["LocationName"]),
-                        Convert.ToInt32(reader["ShopId"])
+                            Convert.ToInt32(reader["ShopId"]),
+                            Convert.ToString(reader["ShopName"]),
+                            Convert.ToInt32(reader["LocationId"]),
+                            Convert.ToString(reader["LocationName"])
                         );
 
                     result.Add(shop);

@@ -13,8 +13,10 @@ namespace DDD2.Infrastructure.SQLite
         public IReadOnlyList<ShopEntity> GetData()
         {
             string sql = @"
-select ShopName,
+select 
 ShopId,
+ShopName,
+LocationId,
 LocationName
 from Shop
 left join Location
@@ -23,11 +25,12 @@ on Shop.LocationId = Location.LocationId;
             return SQLiteHelper.Query(sql,
                 reader =>
                 {
-                    return new ShopEntity(                        
+                    return new ShopEntity(
+                        Convert.ToInt32(reader["ShopId"]),
                         Convert.ToString(reader["ShopName"]),
-                        Convert.ToString(reader["LocationName"]),
-                        Convert.ToInt32(reader["ShopId"])
-                        );
+                        Convert.ToInt32(reader["LocationId"]),
+                        Convert.ToString(reader["LocationName"])
+                       );
                 });
         }
     }

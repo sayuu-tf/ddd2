@@ -16,10 +16,10 @@ namespace DDD2Test.Tests
         {
             var entities = new List<ShopEntity>();
             entities.Add(
-                new ShopEntity("ルタオ", "小樽", 1)             
+                new ShopEntity(1, "ルタオ", 1, "小樽")             
                 );
             entities.Add(
-                new ShopEntity("六花亭", "帯広", 2)
+                new ShopEntity(2, "六花亭", 2, "帯広")
             );
 
             var shopMock = new Mock<IShopRepository>();
@@ -30,7 +30,10 @@ namespace DDD2Test.Tests
             viewModel.Shops[0].ShopId.Is("0001");//ワザと
             viewModel.Shops[0].ShopName.Is("ルタオ");
             viewModel.Shops[0].LocationName.Is("小樽");
-      
+
+            viewModel.Shops[1].ShopId.Is("0002");//ワザと
+            viewModel.Shops[1].ShopName.Is("六花亭");
+            viewModel.Shops[1].LocationName.Is("帯広");
 
         }
     }

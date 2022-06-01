@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\LocationEntity.cs" />
     <Compile Include="Entities\ShopEntity.cs" />
     <Compile Include="Entities\ItemEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IShopRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="ValueObjects\LocationId.cs" />
     <Compile Include="ValueObjects\ShopId.cs" />
     <Compile Include="ValueObjects\ValueObject.cs" />
   </ItemGroup>

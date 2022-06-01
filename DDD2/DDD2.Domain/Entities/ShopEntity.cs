@@ -9,15 +9,17 @@ namespace DDD2.Domain.Entities
 {
     public sealed class ShopEntity
     {
-        public string ShopName { get; }
-        public string LocationName { get; }
         public ShopId ShopId { get; }
+        public string ShopName { get; }
+        public LocationId LocationId { get; }
+        public string LocationName { get; }
 
-        public ShopEntity(string shopName, string location, int shopId)
+        public ShopEntity(int shopId, string shopName, int locationId, string locationName)
         {
-            ShopName = shopName;
-            LocationName = location;
             ShopId = new ShopId(shopId);
+            ShopName = shopName;
+            LocationId = new LocationId(locationId);
+            LocationName = locationName;
         }
     }
 }
