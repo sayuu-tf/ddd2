@@ -29,7 +29,7 @@ namespace DDD2Test.Tests
             viewModel.Shops.Count.Is(2);
             viewModel.Shops[0].ShopId.Is("0001");//ワザと
             viewModel.Shops[0].ShopName.Is("ルタオ");
-            viewModel.Shops[0].Location.Is("小樽");
+            viewModel.Shops[0].LocationName.Is("小樽");
       
 
         }
