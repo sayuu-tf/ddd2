@@ -1,4 +1,5 @@
 ﻿using DDD2.Domain.Repositories;
+using DDD2.Infrastructure.SQLServer;
 using DDD2.WinForm.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,19 @@ namespace DDD2.WinForm
     {
         private IShopRepository _shop;
 
+        public ShopSelectViewModel()
+            :this(new ShopSQLServer())
+        {
+
+        }
+
         public ShopSelectViewModel(IShopRepository shop)
         {
             _shop = shop;
         }
 
-        public object _selectedShopId;
-        public object SelectedShopId
+        public string _selectedShopId = String.Empty;
+        public string SelectedShopId
         {
             get { return _selectedShopId; }
             set
@@ -49,7 +56,7 @@ namespace DDD2.WinForm
 
         public void Search()
         {
-            var entity = _shop.Select((Convert.ToInt32(_selectedShopId)));
+            var entity = _shop.GetDataSingle((Convert.ToInt32(_selectedShopId)));
 
             if (entity == null)
             {

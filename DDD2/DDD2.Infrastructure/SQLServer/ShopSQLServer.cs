@@ -2,6 +2,7 @@
 using DDD2.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +41,35 @@ on Shop.LocationId = Location.LocationId;
             return result;
         }
 
-        public ShopEntity Select(int shopId)
+        public ShopEntity GetDataSingle(int shopId)
         {
-            throw new NotImplementedException();
+            string sql = @"
+select 
+ShopId,
+ShopName,
+Shop.LocationId,
+LocationName
+from Shop
+left join Location
+on Shop.LocationId = Location.LocationId
+where ShopId = @ShopId
+;
+";
+            ShopEntity shop = null;
+            SqlServerHelper.Query(sql,
+                new List<SqlParameter> { new SqlParameter("@ShopId", shopId) }.ToArray(),
+                reader =>
+                {
+                    shop = new ShopEntity(
+                            Convert.ToInt32(reader["ShopId"]),
+                            Convert.ToString(reader["ShopName"]),
+                            Convert.ToInt32(reader["LocationId"]),
+                            Convert.ToString(reader["LocationName"])
+                        );
+
+                });
+
+            return shop;
         }
     }
 }

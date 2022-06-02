@@ -13,9 +13,20 @@ namespace DDD2.WinForm
 {
     public partial class ShopItemListView : Form
     {
+        private ShopSelectViewModel _viewModel = new ShopSelectViewModel();
+
         public ShopItemListView()
         {
             InitializeComponent();
+
+            //データバインディング
+
+            this.ShopSelectTextBox.DataBindings.Add(
+                "Text", _viewModel, nameof(_viewModel.SelectedShopId));
+            this.ShopNameText.DataBindings.Add(
+                "Text", _viewModel, nameof(_viewModel.ShopNameText));
+            this.LocationText.DataBindings.Add(
+                "Text", _viewModel, nameof(_viewModel.LocationNameText));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,6 +35,11 @@ namespace DDD2.WinForm
             {
                 f.ShowDialog();
             }
+        }
+
+        private void ShopSelectButton_Click(object sender, EventArgs e)
+        {
+            _viewModel.Search();
         }
     }
 }

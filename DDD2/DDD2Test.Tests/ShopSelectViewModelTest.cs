@@ -16,10 +16,10 @@ namespace DDD2Test.Tests
         {
 
             var shopMock = new Mock<IShopRepository>();
-            shopMock.Setup(x => x.Select(1)).Returns(
+            shopMock.Setup(x => x.GetDataSingle(1)).Returns(
                 new ShopEntity(1, "ルタオ", 1, "小樽")
             );
-            shopMock.Setup(x => x.Select(2)).Returns(
+            shopMock.Setup(x => x.GetDataSingle(2)).Returns(
                 new ShopEntity(2, "六花亭", 2, "帯広")
             );
 
@@ -27,7 +27,7 @@ namespace DDD2Test.Tests
 
 
             //初期値は空
-            Assert.IsNull(viewModel.SelectedShopId);
+            Assert.AreEqual("", viewModel.SelectedShopId);
             Assert.AreEqual("", viewModel.ShopNameText);
             Assert.AreEqual("", viewModel.LocationNameText);            
 

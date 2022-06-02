@@ -34,7 +34,7 @@ on Shop.LocationId = Location.LocationId;
                 });
         }
 
-        public ShopEntity Select(int shopId)
+        public ShopEntity GetDataSingle(int shopId)
         {
             throw new NotImplementedException();
         }
