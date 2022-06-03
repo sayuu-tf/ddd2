@@ -62,6 +62,16 @@ namespace DDD2.WinForm
             }
         }
 
+        public string _profitText = String.Empty;
+        public string ProfitText
+        {
+            get { return _profitText; }
+            set
+            {
+                SetProperty(ref _profitText, value);
+            }
+        }
+
         public BindingList<ShopEntity> Shops { get; set; } = new BindingList<ShopEntity>();
         public BindingList<LocationEntity> Locations { get; set; }
 
@@ -73,11 +83,13 @@ namespace DDD2.WinForm
             {
                 ShopNameText = String.Empty;
                 LocationNameText = String.Empty;
+                ProfitText = String.Empty;
             }
             else
             {
                 ShopNameText = entity.ShopName;
                 LocationNameText = entity.LocationName;
+                ProfitText = entity.Profit.ToString();
             }
         }
     }

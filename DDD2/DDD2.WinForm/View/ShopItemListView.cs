@@ -27,6 +27,8 @@ namespace DDD2.WinForm
                 "Text", _viewModel, nameof(_viewModel.ShopNameText));
             this.LocationText.DataBindings.Add(
                 "Text", _viewModel, nameof(_viewModel.LocationNameText));
+            this.ProfitText.DataBindings.Add(
+                "Text", _viewModel, nameof(_viewModel.ProfitText));
         }
 
         private void button1_Click(object sender, EventArgs e)
