@@ -1,8 +1,10 @@
-﻿using DDD2.Domain.Repositories;
+﻿using DDD2.Domain.Entities;
+using DDD2.Domain.Repositories;
 using DDD2.Infrastructure.SQLServer;
 using DDD2.WinForm.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ namespace DDD2.WinForm
 {
     public class ShopSelectViewModel : ViewModelBase
     {
-        private IShopRepository _shop;
+        private IShopRepository _shops;
 
         public ShopSelectViewModel()
             :this(new ShopSQLServer())
@@ -19,9 +21,15 @@ namespace DDD2.WinForm
 
         }
 
-        public ShopSelectViewModel(IShopRepository shop)
+        public ShopSelectViewModel(IShopRepository shops)
         {
-            _shop = shop;
+            _shops = shops;
+
+            foreach (var shop in _shops.GetData())
+            {
+                
+                Shops.Add(new ShopEntity(shop.ShopId.Value, shop.ShopName, shop.LocationId.Value, shop.LocationName, shop.Profit));
+            }
         }
 
         public string _selectedShopId = String.Empty;
@@ -54,9 +62,12 @@ namespace DDD2.WinForm
             }
         }
 
+        public BindingList<ShopEntity> Shops { get; set; } = new BindingList<ShopEntity>();
+        public BindingList<LocationEntity> Locations { get; set; }
+
         public void Search()
         {
-            var entity = _shop.GetDataSingle((Convert.ToInt32(_selectedShopId)));
+            var entity = _shops.GetDataSingle((Convert.ToInt32(_selectedShopId)));
 
             if (entity == null)
             {

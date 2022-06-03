@@ -24,7 +24,7 @@ namespace DDD2.Domain.ValueObjects
         {
             get
             {
-                return Value.ToString().PadLeft(4, '0');
+                return Value.ToString().PadLeft(2, '0');
             }
         }
     }

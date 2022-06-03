@@ -13,13 +13,15 @@ namespace DDD2.Domain.Entities
         public string ShopName { get; }
         public LocationId LocationId { get; }
         public string LocationName { get; }
+        public int Profit { get; }
 
-        public ShopEntity(int shopId, string shopName, int locationId, string locationName)
+        public ShopEntity(int shopId, string shopName, int locationId, string locationName, int profit)
         {
             ShopId = new ShopId(shopId);
             ShopName = shopName;
             LocationId = new LocationId(locationId);
             LocationName = locationName;
+            Profit = profit;
         }
     }
 }

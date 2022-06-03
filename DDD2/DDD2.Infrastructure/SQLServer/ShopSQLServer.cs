@@ -18,7 +18,8 @@ select
 ShopId,
 ShopName,
 Shop.LocationId,
-LocationName
+LocationName,
+Profit
 from Shop
 left join Location
 on Shop.LocationId = Location.LocationId;
@@ -32,7 +33,8 @@ on Shop.LocationId = Location.LocationId;
                             Convert.ToInt32(reader["ShopId"]),
                             Convert.ToString(reader["ShopName"]),
                             Convert.ToInt32(reader["LocationId"]),
-                            Convert.ToString(reader["LocationName"])
+                            Convert.ToString(reader["LocationName"]),
+                            Convert.ToInt32(reader["Profit"])
                         );
 
                     result.Add(shop);
@@ -48,7 +50,8 @@ select
 ShopId,
 ShopName,
 Shop.LocationId,
-LocationName
+LocationName,
+Profit
 from Shop
 left join Location
 on Shop.LocationId = Location.LocationId
@@ -64,7 +67,8 @@ where ShopId = @ShopId
                             Convert.ToInt32(reader["ShopId"]),
                             Convert.ToString(reader["ShopName"]),
                             Convert.ToInt32(reader["LocationId"]),
-                            Convert.ToString(reader["LocationName"])
+                            Convert.ToString(reader["LocationName"]),
+                            Convert.ToInt32(reader["Profit"])
                         );
 
                 });

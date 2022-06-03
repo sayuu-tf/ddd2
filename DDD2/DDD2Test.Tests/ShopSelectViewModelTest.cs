@@ -15,16 +15,25 @@ namespace DDD2Test.Tests
         public void お店選択画面シナリオ()
         {
 
+            var shopList = new List<ShopEntity>();
+            shopList.Add(new ShopEntity(1, "ルタオ", 1, "小樽", 3000));
+            shopList.Add(new ShopEntity(2, "六花亭", 2, "帯広", 3900));
+            
             var shopMock = new Mock<IShopRepository>();
             shopMock.Setup(x => x.GetDataSingle(1)).Returns(
-                new ShopEntity(1, "ルタオ", 1, "小樽")
+                shopList[0]
             );
             shopMock.Setup(x => x.GetDataSingle(2)).Returns(
-                new ShopEntity(2, "六花亭", 2, "帯広")
+                shopList[1]
             );
+
+            shopMock.Setup(x => x.GetData()).Returns(shopList);
 
             var viewModel = new ShopSelectViewModel(shopMock.Object);
 
+
+            Assert.AreEqual(2, viewModel.Shops.Count);
+            //Assert.AreEqual(2, viewModel.Locations.Count);
 
             //初期値は空
             Assert.AreEqual("", viewModel.SelectedShopId);
