@@ -42,14 +42,19 @@ namespace DDD2Test.Tests
             var viewModel = new ShopSelectViewModel(shopMock.Object, locationMock.Object);
 
 
-            Assert.AreEqual(4, viewModel.Shops.Count);
-            Assert.AreEqual(2, viewModel.Locations.Count);
-
             //初期値は空
             Assert.AreEqual("", viewModel.SelectedShopId);
             Assert.AreEqual("", viewModel.ShopNameText);
             Assert.AreEqual("", viewModel.LocationNameText);
-            Assert.AreEqual("", viewModel.ProfitText);            
+            Assert.AreEqual("", viewModel.ProfitText);
+
+            Assert.AreEqual(4, viewModel.Shops.Count);
+            Assert.AreEqual(2, viewModel.Locations.Count);
+            Assert.AreEqual(1, viewModel.Locations[0].LocationId);
+            Assert.AreEqual("道央", viewModel.Locations[0].LocationName);
+            Assert.AreEqual(2, viewModel.Locations[1].LocationId);
+            Assert.AreEqual("道東", viewModel.Locations[1].LocationName);
+
 
             //1を入れて、ボタンを押すと、
             viewModel.SelectedShopId = "1";
