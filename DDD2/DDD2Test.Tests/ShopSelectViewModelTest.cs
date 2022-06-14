@@ -50,11 +50,12 @@ namespace DDD2Test.Tests
 
             Assert.AreEqual(4, viewModel.Shops.Count);
             Assert.AreEqual(2, viewModel.Locations.Count);
-            Assert.AreEqual(1, viewModel.Locations[0].LocationId);
+            Assert.AreEqual(1, viewModel.Locations[0].LocationId.Value);
             Assert.AreEqual("道央", viewModel.Locations[0].LocationName);
-            Assert.AreEqual(2, viewModel.Locations[1].LocationId);
+            Assert.AreEqual(2, viewModel.Locations[1].LocationId.Value);
             Assert.AreEqual("道東", viewModel.Locations[1].LocationName);
 
+            Assert.IsNull(viewModel.SelectedLocationId);
 
             //1を入れて、ボタンを押すと、
             viewModel.SelectedShopId = "1";
@@ -65,6 +66,14 @@ namespace DDD2Test.Tests
             Assert.AreEqual("ルタオ", viewModel.ShopNameText);
             Assert.AreEqual("道央", viewModel.LocationNameText);
             Assert.AreEqual("3000", viewModel.ProfitText);
+
+            //コンボボックス
+            viewModel.SelectedLocationId = 1;
+            viewModel.Search2();
+            Assert.AreEqual(1, viewModel.SelectedLocationId);
+            Assert.AreEqual("きのとや", viewModel.ShopNameText);
+            Assert.AreEqual("道央", viewModel.LocationNameText);
+            Assert.AreEqual("5000", viewModel.ProfitText);
 
         }
     }

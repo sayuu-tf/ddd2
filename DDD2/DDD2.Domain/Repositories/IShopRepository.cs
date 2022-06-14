@@ -11,5 +11,6 @@ namespace DDD2.Domain.Repositories
     {
         IReadOnlyList<ShopEntity> GetData();
         ShopEntity GetDataSingle(int shopId);
+        ShopEntity GetMaxProfitData(int locationId);
     }
 }

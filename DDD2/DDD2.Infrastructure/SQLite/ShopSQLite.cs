@@ -40,5 +40,10 @@ on Shop.LocationId = Location.LocationId;
         {
             throw new NotImplementedException();
         }
+
+        public ShopEntity GetMaxProfitData(int locationId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

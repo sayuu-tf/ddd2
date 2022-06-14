@@ -42,6 +42,16 @@ namespace DDD2.WinForm
             }
         }
 
+        public object _selectedLocationId;
+        public object SelectedLocationId
+        {
+            get { return _selectedLocationId; }
+            set
+            {
+                SetProperty(ref _selectedLocationId, value);
+            }
+        }
+
         public string _selectedShopId = String.Empty;
         public string SelectedShopId
         {
@@ -89,6 +99,24 @@ namespace DDD2.WinForm
         public void Search()
         {
             var entity = _shops.GetDataSingle((Convert.ToInt32(_selectedShopId)));
+
+            if (entity == null)
+            {
+                ShopNameText = String.Empty;
+                LocationNameText = String.Empty;
+                ProfitText = String.Empty;
+            }
+            else
+            {
+                ShopNameText = entity.ShopName;
+                LocationNameText = entity.LocationName;
+                ProfitText = entity.Profit.ToString();
+            }
+        }
+
+        public void Search2()
+        {
+            var entity = _shops.GetMaxProfitData((Convert.ToInt32(_selectedLocationId)));
 
             if (entity == null)
             {

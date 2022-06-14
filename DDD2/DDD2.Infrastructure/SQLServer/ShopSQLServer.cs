@@ -75,5 +75,10 @@ where ShopId = @ShopId
 
             return shop;
         }
+
+        public ShopEntity GetMaxProfitData(int locationId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
