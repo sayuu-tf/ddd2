@@ -31,11 +31,19 @@ namespace DDD2Test.Tests
 
             shopMock.Setup(x => x.GetData()).Returns(shopList);
 
-            var viewModel = new ShopSelectViewModel(shopMock.Object);
+
+            var locationList = new List<LocationEntity>();
+            locationList.Add(new LocationEntity(1, "道央"));
+            locationList.Add(new LocationEntity(2, "道東"));
+
+            var locationMock = new Mock<ILocationRepository>();
+            locationMock.Setup(x => x.GetData()).Returns(locationList);
+
+            var viewModel = new ShopSelectViewModel(shopMock.Object, locationMock.Object);
 
 
             Assert.AreEqual(4, viewModel.Shops.Count);
-            //Assert.AreEqual(2, viewModel.Locations.Count);
+            Assert.AreEqual(2, viewModel.Locations.Count);
 
             //初期値は空
             Assert.AreEqual("", viewModel.SelectedShopId);

@@ -14,21 +14,31 @@ namespace DDD2.WinForm
     public class ShopSelectViewModel : ViewModelBase
     {
         private IShopRepository _shops;
+        private ILocationRepository _locations;
 
         public ShopSelectViewModel()
-            :this(new ShopSQLServer())
+            :this(new ShopSQLServer(), null)
         {
 
         }
 
-        public ShopSelectViewModel(IShopRepository shops)
+        public ShopSelectViewModel(
+            IShopRepository shops,
+            ILocationRepository locations)
         {
             _shops = shops;
+            _locations = locations;
 
             foreach (var shop in _shops.GetData())
             {
                 
                 Shops.Add(new ShopEntity(shop.ShopId.Value, shop.ShopName, shop.LocationId.Value, shop.LocationName, shop.Profit));
+            }
+
+            foreach (var loc in _locations.GetData())
+            {
+
+                Locations.Add(new LocationEntity(loc.LocationId.Value, loc.LocationName));
             }
         }
 
@@ -74,6 +84,7 @@ namespace DDD2.WinForm
 
         public BindingList<ShopEntity> Shops { get; set; } = new BindingList<ShopEntity>();
         public BindingList<LocationEntity> Locations { get; set; }
+        = new BindingList<LocationEntity>();
 
         public void Search()
         {
