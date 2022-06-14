@@ -1,4 +1,5 @@
-﻿using DDD2.WinForm.View;
+﻿using DDD2.Domain.Entities;
+using DDD2.WinForm.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +30,15 @@ namespace DDD2.WinForm
                 "Text", _viewModel, nameof(_viewModel.LocationNameText));
             this.ProfitText.DataBindings.Add(
                 "Text", _viewModel, nameof(_viewModel.ProfitText));
+
+            this.LocationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             this.LocationComboBox.DataBindings.Add(
                 "SelectedValue", _viewModel, nameof(_viewModel.SelectedLocationId));
+            this.LocationComboBox.DataBindings.Add(
+                "DataSource", _viewModel, nameof(_viewModel.Locations));
+            this.LocationComboBox.ValueMember = nameof(LocationEntity.LocationId);
+            this.LocationComboBox.DisplayMember = nameof(LocationEntity.LocationName);
+
         }
 
         private void button1_Click(object sender, EventArgs e)

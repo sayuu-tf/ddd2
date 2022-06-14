@@ -1,5 +1,6 @@
 ﻿using DDD2.Domain.Entities;
 using DDD2.Domain.Repositories;
+using DDD2.Domain.ValueObjects;
 using DDD2.Infrastructure.SQLServer;
 using DDD2.WinForm.ViewModel;
 using System;
@@ -17,7 +18,7 @@ namespace DDD2.WinForm
         private ILocationRepository _locations;
 
         public ShopSelectViewModel()
-            :this(new ShopSQLServer(), null)
+            :this(new ShopSQLServer(), new LocationSQLServer())
         {
 
         }
@@ -42,8 +43,8 @@ namespace DDD2.WinForm
             }
         }
 
-        public object _selectedLocationId;
-        public object SelectedLocationId
+        public LocationId _selectedLocationId;
+        public LocationId SelectedLocationId
         {
             get { return _selectedLocationId; }
             set
@@ -116,7 +117,7 @@ namespace DDD2.WinForm
 
         public void Search2()
         {
-            var entity = _shops.GetMaxProfitData((Convert.ToInt32(_selectedLocationId)));
+            var entity = _shops.GetMaxProfitData((Convert.ToInt32(_selectedLocationId.Value)));
 
             if (entity == null)
             {
