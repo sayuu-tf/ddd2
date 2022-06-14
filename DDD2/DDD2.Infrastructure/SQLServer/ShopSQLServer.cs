@@ -78,7 +78,36 @@ where ShopId = @ShopId
 
         public ShopEntity GetMaxProfitData(int locationId)
         {
-            throw new NotImplementedException();
+            string sql = @"
+select top 1
+ShopId,
+ShopName,
+Shop.LocationId,
+LocationName,
+Profit
+from Shop
+left join Location
+on Shop.LocationId = Location.LocationId
+where Shop.LocationId = @LocationId
+order by Profit desc;
+;
+";
+            ShopEntity shop = null;
+            SqlServerHelper.Query(sql,
+                new List<SqlParameter> { new SqlParameter("@LocationId", locationId) }.ToArray(),
+                reader =>
+                {
+                    shop = new ShopEntity(
+                            Convert.ToInt32(reader["ShopId"]),
+                            Convert.ToString(reader["ShopName"]),
+                            Convert.ToInt32(reader["LocationId"]),
+                            Convert.ToString(reader["LocationName"]),
+                            Convert.ToInt32(reader["Profit"])
+                        );
+
+                });
+
+            return shop;
         }
     }
 }

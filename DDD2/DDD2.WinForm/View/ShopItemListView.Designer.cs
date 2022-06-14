@@ -149,6 +149,7 @@ namespace DDD2.WinForm
             this.LocationButton.TabIndex = 11;
             this.LocationButton.Text = "場所選択";
             this.LocationButton.UseVisualStyleBackColor = true;
+            this.LocationButton.Click += new System.EventHandler(this.LocationButton_Click);
             // 
             // ShopItemListView
             // 

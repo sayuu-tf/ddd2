@@ -29,6 +29,8 @@ namespace DDD2.WinForm
                 "Text", _viewModel, nameof(_viewModel.LocationNameText));
             this.ProfitText.DataBindings.Add(
                 "Text", _viewModel, nameof(_viewModel.ProfitText));
+            this.LocationComboBox.DataBindings.Add(
+                "SelectedValue", _viewModel, nameof(_viewModel.SelectedLocationId));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,6 +44,11 @@ namespace DDD2.WinForm
         private void ShopSelectButton_Click(object sender, EventArgs e)
         {
             _viewModel.Search();
+        }
+
+        private void LocationButton_Click(object sender, EventArgs e)
+        {
+            _viewModel.Search2();
         }
     }
 }
