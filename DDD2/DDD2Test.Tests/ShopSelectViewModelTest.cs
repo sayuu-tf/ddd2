@@ -30,6 +30,10 @@ namespace DDD2Test.Tests
             );
 
             shopMock.Setup(x => x.GetData()).Returns(shopList);
+            
+            shopMock.Setup(x => x.GetMaxProfitData(1)).Returns(
+                shopList[3]
+            );
 
 
             var locationList = new List<LocationEntity>();
