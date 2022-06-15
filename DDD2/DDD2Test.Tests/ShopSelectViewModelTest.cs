@@ -1,5 +1,6 @@
 ﻿using DDD2.Domain.Entities;
 using DDD2.Domain.Repositories;
+using DDD2.Domain.ValueObjects;
 using DDD2.WinForm;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -72,9 +73,9 @@ namespace DDD2Test.Tests
             Assert.AreEqual("3000", viewModel.ProfitText);
 
             //コンボボックス
-            viewModel.SelectedLocationId = 1;
+            viewModel.SelectedLocationId = new LocationId(1);
             viewModel.Search2();
-            Assert.AreEqual(1, viewModel.SelectedLocationId);
+            Assert.AreEqual(new LocationId(1), viewModel.SelectedLocationId);
             Assert.AreEqual("きのとや", viewModel.ShopNameText);
             Assert.AreEqual("道央", viewModel.LocationNameText);
             Assert.AreEqual("5000", viewModel.ProfitText);
