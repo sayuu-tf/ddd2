@@ -29,6 +29,7 @@ namespace DDD2.WinForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ShopSelectTextBox = new System.Windows.Forms.TextBox();
             this.ShopSelectButton = new System.Windows.Forms.Button();
@@ -41,6 +42,9 @@ namespace DDD2.WinForm
             this.ProfitText = new System.Windows.Forms.Label();
             this.LocationComboBox = new System.Windows.Forms.ComboBox();
             this.LocationButton = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.LocationListButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -151,11 +155,22 @@ namespace DDD2.WinForm
             this.LocationButton.UseVisualStyleBackColor = true;
             this.LocationButton.Click += new System.EventHandler(this.LocationButton_Click);
             // 
+            // LocationListButton
+            // 
+            this.LocationListButton.Location = new System.Drawing.Point(123, 12);
+            this.LocationListButton.Name = "LocationListButton";
+            this.LocationListButton.Size = new System.Drawing.Size(75, 23);
+            this.LocationListButton.TabIndex = 12;
+            this.LocationListButton.Text = "場所List";
+            this.LocationListButton.UseVisualStyleBackColor = true;
+            this.LocationListButton.Click += new System.EventHandler(this.LocationListButton_Click);
+            // 
             // ShopItemListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 341);
+            this.Controls.Add(this.LocationListButton);
             this.Controls.Add(this.LocationButton);
             this.Controls.Add(this.LocationComboBox);
             this.Controls.Add(this.ProfitText);
@@ -170,6 +185,7 @@ namespace DDD2.WinForm
             this.Controls.Add(this.label1);
             this.Name = "ShopItemListView";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +205,8 @@ namespace DDD2.WinForm
         private System.Windows.Forms.Label ProfitText;
         private System.Windows.Forms.ComboBox LocationComboBox;
         private System.Windows.Forms.Button LocationButton;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button LocationListButton;
     }
 }
 

@@ -36,6 +36,40 @@ namespace DDD2Test.Tests
             viewModel.Locations[1].LocationName.Is("大阪");
             viewModel.Locations[2].LocationId.Is("03");
             viewModel.Locations[2].LocationName.Is("名古屋");
+
+        }
+
+        [TestMethod]
+        public void 場所保存シナリオ()
+        {
+            var entities = new List<LocationEntity>();
+            entities.Add(
+                new LocationEntity(1, "東京")
+                );
+            var mock = new Mock<ILocationRepository>();
+            mock.Setup(x => x.GetData()).Returns(entities);
+
+            var viewModel = new LocationListViewModel(mock.Object);
+
+            viewModel.NewLocationId.Is("");
+            viewModel.NewLocationName.Is("");
+
+            viewModel.NewLocationId = "2";
+            viewModel.NewLocationName = "大阪";
+
+            mock.Setup(x => x.Save(It.IsAny<LocationEntity>())).
+                Callback<LocationEntity>(saveValue => {
+                    saveValue.LocationId.Value.Is(2);
+                    saveValue.LocationName.Is("大阪");
+                });
+
+            viewModel.Save();
+            mock.VerifyAll();
+
+            viewModel.ClearText();
+
+            viewModel.NewLocationId.Is("");
+            viewModel.NewLocationName.Is("");
         }
     }
 }

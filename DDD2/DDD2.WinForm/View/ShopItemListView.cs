@@ -58,5 +58,14 @@ namespace DDD2.WinForm
         {
             _viewModel.Search2();
         }
+
+        private void LocationListButton_Click(object sender, EventArgs e)
+        {
+            using (var f = new LocationListView())
+            {
+                f.ShowDialog();
+            }
+
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace DDD2.Domain.Repositories
     public interface ILocationRepository
     {
         IReadOnlyList<LocationEntity> GetData();
+        void Save(LocationEntity location);
     }
 }
